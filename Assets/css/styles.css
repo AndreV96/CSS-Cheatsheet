@@ -1,0 +1,129 @@
+:root {
+    --mainColor: #e867ed;
+    --secondColor: #333940;
+    --thirdColor: #e0eae5;
+    --alternativeColor1: #4a8880;
+    --white: #fff;
+    --fuentePrincipal: 'Open-Sans', sans-serif;
+    --fuenteSecundaria: 'Mohave', sans-serif;
+    /* --sans */
+}
+
+/* Globales */
+
+body {
+    background-color: var(--secondColor);
+    font-family: var(--fuentePrincipal);
+}
+
+p {
+    color: var(--white);
+    font: open;
+    line-height: 1.5;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Main Content */
+
+header h1 {
+    color: var(--mainColor);
+    text-align: center;
+}
+
+header p {
+    margin: 0;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .main-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cards:nth-of-type(even) {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .main-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .add-margin-left-grid {
+        margin-left: 10px;
+    }
+    #card-linear-gradients {
+        margin-left: 0;
+    }
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    border: 2px dashed var(--thirdColor);
+}
+
+.card-header {
+    display: flex;
+}
+
+.cards h2 {
+    color: var(--mainColor);
+    position: relative;
+    margin-top: -20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid var(--thirdColor);
+    background-color: var(--secondColor);
+    width: 90%;
+    padding: 5px;   
+    border-radius: 8px;
+}
+
+.cards p {
+    color: var(--mainColor);
+    width: 95%;
+    margin: 0 auto;
+}
+
+.card-info {  
+    margin: 10px;
+    padding: 10px;
+    background-image: linear-gradient(
+        rgba(232,103,237, 0.3) 0%,
+        rgba(232,103,237, 0.6) 100%
+    );   
+    border-radius: 8px;
+    flex-grow: 1;
+}
+
+
+.cards, .cards h2 {
+    transition: all 0.5s ease-in-out;
+} 
+
+.cards:hover, .cards:hover .card-header h2 {
+    box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 236, 1);
+}
+
+p::selection {
+    background-color: var(--alternativeColor1);
+}
+
+.card-info p {
+    color: var(--white);
+    font-family: var(--fuenteSecundaria);
+}
+
+footer p {
+    color: var(--mainColor);
+    text-align: center;
+    font-weight: 700;
+}
